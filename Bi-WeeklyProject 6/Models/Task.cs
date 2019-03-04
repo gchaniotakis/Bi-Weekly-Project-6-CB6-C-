@@ -11,10 +11,9 @@ namespace Bi_WeeklyProject_6.Models
     {
         public int Id { get; set; }
         [Required]
-        [Display(Name = "Text Title")]
-        public string Name { get; set; }
-        [Required]
-        public string Text { get; set; }
+        [Display(Name = "Task Title")]
+        public string Tile { get; set; }      
+        
 
 
     }
