@@ -7,19 +7,20 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Bi_WeeklyProject_6.Models;
+using Bi_WeeklyProject6.Models;
 
 namespace Bi_WeeklyProject_6.Controllers
 {
     public class DocumentsController : Controller
     {
-        private DatabaseContext db = new DatabaseContext();
+        private Models.Database db = new Models.Database();
 
         // GET: Documents
         [Authorize(Roles = "Manager,Analyst,Programmer,Architect,Tester")]
         public ActionResult Index()
         {
             User loggedinUSer = Session["User"] as User;
-            IEnumerable<Task> documents = db.Task.Where(x => x.Role == loggedinUSer.Role).Include(d => d.User);
+            IEnumerable<Task> documents = db.Tasks.Where(x => x.Role == loggedinUSer.Role).Include(d => d.User);
             if (documents == null)
             {
                 documents = new List<Task>();
@@ -30,7 +31,7 @@ namespace Bi_WeeklyProject_6.Controllers
         [Authorize(Roles = "Manager,Analyst,Programmer,Architect,Tester")]
         public ActionResult Complete(int id)
         {
-            Task task = db.Task.Where(x => x.Id == id).FirstOrDefault();
+            Task task = db.Tasks.Where(x => x.Id == id).FirstOrDefault();
             if (task.Role == Roles.Manager)
             {
                 return RedirectToAction("Index", "Home");
@@ -48,7 +49,7 @@ namespace Bi_WeeklyProject_6.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Task task = db.Task.Find(id);
+            Task task = db.Tasks.Find(id);
             if (task == null)
             {
                 return HttpNotFound();
