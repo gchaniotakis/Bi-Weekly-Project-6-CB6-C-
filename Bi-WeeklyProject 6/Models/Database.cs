@@ -1,5 +1,6 @@
 ﻿namespace Bi_WeeklyProject_6.Models
 {
+    using Bi_WeeklyProject6.Models;
     using System;
     using System.Data.Entity;
     using System.Linq;
@@ -16,3 +17,5 @@
 
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Task> Tasks { get; set; }
+    }
+}

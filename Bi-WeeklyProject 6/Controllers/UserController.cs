@@ -1,4 +1,5 @@
 ﻿using Bi_WeeklyProject_6.Models;
+using Bi_WeeklyProject6.Models;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
@@ -8,7 +9,7 @@ namespace Bi_WeeklyProject_6.Controllers
 {
     public class UsersController : Controller
     {
-        private DatabaseContext db = new DatabaseContext();
+        private Models.Database db = new Models.Database();
 
         // GET: Users
         [Authorize(Roles = "Manager")]
