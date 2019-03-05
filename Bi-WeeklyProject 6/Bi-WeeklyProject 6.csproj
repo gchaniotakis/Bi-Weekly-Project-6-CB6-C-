@@ -181,6 +181,7 @@
     <Compile Include="Migrations\Migration_1.cs" />
     <Compile Include="Migrations\Migration_2.cs" />
     <Compile Include="Migrations\Migration_3.cs" />
+    <Compile Include="Migrations\Migration_4.cs" />
     <Compile Include="Models\Database.cs" />
     <Compile Include="Models\Task.cs" />
     <Compile Include="Models\User.cs" />
