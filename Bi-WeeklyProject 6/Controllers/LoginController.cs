@@ -1,9 +1,4 @@
-﻿using Microsoft.AspNet.Identity;
-using Bi_WeeklyProject_6.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using Bi_WeeklyProject_6.Models;
 using System.Web.Mvc;
 
 namespace Bi_WeeklyProject_6.Controllers
