@@ -10,11 +10,26 @@ namespace Bi_WeeklyProject_6.Models
     public class Task
     {
         public int Id { get; set; }
+
+
         [Required]
         [Display(Name = "Task Title")]
-        public string Tile { get; set; }      
+        public string Tile { get; set; }    
         
 
+        [Required]
+        [Display(Name = "Status")]
+        public Status Status { get; set; }       
+ 
 
+    }
+
+    public enum Status
+    {
+        Analyzing,
+        Architecting,
+        Programming,
+        Testing,
+        Complete
     }
 }
