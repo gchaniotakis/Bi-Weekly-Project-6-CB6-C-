@@ -78,7 +78,7 @@ namespace Bi_WeeklyProject_6.Controllers
                 User loggedinUSer = Session["User"] as User;
                 task.UserID = loggedinUSer.Id;
                 task.Role = loggedinUSer.Role;
-                db.Task.Add(task);
+                db.Tasks.Add(task);
                 db.SaveChanges();
 
                 return RedirectToAction("Index");
@@ -96,7 +96,7 @@ namespace Bi_WeeklyProject_6.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Task task = db.Task.Find(id);
+            Task task = db.Tasks.Find(id);
             if (task == null)
             {
                 return HttpNotFound();
@@ -134,7 +134,7 @@ namespace Bi_WeeklyProject_6.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Task task = db.Task.Find(id);
+            Task task = db.Tasks.Find(id);
             if (task == null)
             {
                 return HttpNotFound();
@@ -148,8 +148,8 @@ namespace Bi_WeeklyProject_6.Controllers
         [Authorize(Roles = "Manager")]
         public ActionResult DeleteConfirmed(int id)
         {
-            Task task = db.Documents.Find(id);
-            db.Task.Remove(task);
+            Task task = db.Tasks.Find(id);
+            db.Tasks.Remove(task);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
