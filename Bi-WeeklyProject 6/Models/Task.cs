@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bi_WeeklyProject6.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -11,25 +12,22 @@ namespace Bi_WeeklyProject_6.Models
     {
         public int Id { get; set; }
 
+        [Required]
+        [Display(Name = "Text Title")]
+        public string Name { get; set; }
 
         [Required]
-        [Display(Name = "Task Title")]
-        public string Tile { get; set; }    
-        
+        public string Text { get; set; }
 
-        [Required]
-        [Display(Name = "Status")]
-        public Status Status { get; set; }       
- 
+        [Display(Name = "Role Working Document")]
+        public Roles Role { get; set; }
+
+        [ForeignKey("User")]
+        public int UserID { get; set; }
+        public User User { get; set; }
+
 
     }
 
-    public enum Status
-    {
-        Analyzing,
-        Architecting,
-        Programming,
-        Testing,
-        Complete
-    }
+
 }

@@ -20,13 +20,13 @@ namespace Bi_WeeklyProject_6.Controllers
         public ActionResult Index()
         {
             User loggedinUSer = Session["User"] as User;
-            IEnumerable<Task> documents = db.Tasks.Where(x => x.Role == loggedinUSer.Role).Include(d => d.User);
-            if (documents == null)
+            IEnumerable<Task> tasks = db.Tasks.Where(x => x.Role == loggedinUSer.Role).Include(d => d.User);
+            if (tasks == null)
             {
-                documents = new List<Task>();
+                tasks = new List<Task>();
             }
 
-            return View(documents.ToList());
+            return View(tasks.ToList());
         }
         [Authorize(Roles = "Manager,Analyst,Programmer,Architect,Tester")]
         public ActionResult Complete(int id)
