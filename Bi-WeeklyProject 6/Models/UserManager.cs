@@ -1,5 +1,4 @@
-﻿using Bi_WeeklyProject6.Models;
-using Microsoft.AspNet.Identity;
+﻿using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 using System;
 using System.Collections.Generic;

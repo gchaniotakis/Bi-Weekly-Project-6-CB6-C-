@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Bi_WeeklyProject_6.Models;
 
-namespace Bi_WeeklyProject6.Models
+namespace Bi_WeeklyProject_6.Models
 {
     public class User
     {

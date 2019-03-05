@@ -7,7 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Bi_WeeklyProject_6.Models;
-using Bi_WeeklyProject6.Models;
+
 
 namespace Bi_WeeklyProject_6.Controllers
 {

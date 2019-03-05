@@ -1,5 +1,4 @@
 ﻿using Bi_WeeklyProject_6.Models;
-using Bi_WeeklyProject6.Models;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
